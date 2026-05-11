@@ -1,0 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#5fa3df;
+    font-family:Arial;
+}
+
+/* HEADER */
+.topbar{
+    background:#0a3d5c;
+    padding:15px;
+}
+
+.header{
+    display:flex;
+    align-items:center;
+}
+
+.logo{
+    width:100px;
+    margin-right:20px;
+}
+
+.titulo{
+    color:white;
+}
+
+/* MENU */
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin:20px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    background:white;
+    cursor:pointer;
+    border-radius:8px;
+}
+
+/* CONTENIDO */
+#contenido{
+    background:white;
+    width:90%;
+    margin:auto;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    width:70px;
+}
+
+.whatsapp img{
+    width:100%;
+}
+
+/* SIMBOLOS */
+.simbolos-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    margin-top:40px;
+}
+
+.simbolo-box{
+    padding:30px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.rosa{ background:#f3e4f1; }
+.gris{ background:#e5e5e5; }
+
+.bandera-img img{
+    width:400px;
+}
+
+.escudo-img img{
+    width:300px;
+}
+
+.texto-simbolo h2{
+    text-align:center;
+    font-size:40px;
+}

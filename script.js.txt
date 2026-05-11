@@ -1,0 +1,108 @@
+const imagenesInicio = [
+  "https://picsum.photos/id/1015/800/300",
+  "https://picsum.photos/id/1016/800/300",
+  "https://picsum.photos/id/1018/800/300"
+];
+
+const imagenesNosotros = [
+  "https://i.ibb.co/674Jtvyh/Whats-App-Image-2026-05-06-at-12-57-09-PM.jpg",
+  "https://i.ibb.co/LXm5VtLr/Whats-App-Image-2026-05-07-at-5-27-57-PM.jpg"
+];
+
+let sliderActivo;
+
+function iniciarSlider(id, lista){
+
+  let i = 0;
+
+  clearInterval(sliderActivo);
+
+  sliderActivo = setInterval(() => {
+
+    i++;
+
+    if(i >= lista.length){
+      i = 0;
+    }
+
+    const img = document.getElementById(id);
+
+    if(img){
+      img.src = lista[i];
+    }
+
+  }, 3000);
+}
+
+function mostrar(seccion){
+
+  const contenido = document.getElementById("contenido");
+
+  clearInterval(sliderActivo);
+
+  if(seccion === "inicio"){
+
+    contenido.innerHTML = `
+      <h2>INICIO</h2>
+
+      <div class="slider">
+        <img id="slide-inicio" src="${imagenesInicio[0]}">
+      </div>
+    `;
+
+    iniciarSlider("slide-inicio", imagenesInicio);
+  }
+
+  else if(seccion === "nosotros"){
+
+    contenido.innerHTML = `
+      <h2>NOSOTROS</h2>
+
+      <div class="simbolos-container">
+
+        <div class="simbolo-box gris">
+          <div class="bandera-img">
+            <img src="https://i.ibb.co/8L6mK7j/bandera.png">
+          </div>
+        </div>
+
+        <div class="simbolo-box rosa">
+          <div class="texto-simbolo">
+            <h2>Bandera</h2>
+            <p>Representa valores y educación.</p>
+          </div>
+        </div>
+
+        <div class="simbolo-box rosa">
+          <div class="texto-simbolo">
+            <h2>Escudo</h2>
+            <p>Simboliza conocimiento y ciencia.</p>
+          </div>
+        </div>
+
+        <div class="simbolo-box gris">
+          <div class="escudo-img">
+            <img src="https://i.ibb.co/0yq2zQ3h/institucion-educativa-distrital-ndeg-176.png">
+          </div>
+        </div>
+
+      </div>
+    `;
+  }
+
+  else if(seccion === "profesores"){
+    contenido.innerHTML = "<h2>Profesores</h2>";
+  }
+
+  else if(seccion === "noticias"){
+    contenido.innerHTML = "<h2>Noticias</h2>";
+  }
+
+  else if(seccion === "eventos"){
+    contenido.innerHTML = "<h2>Eventos</h2>";
+  }
+}
+
+window.onload = () => {
+  mostrar("inicio");
+};
